@@ -28,7 +28,8 @@ fn print_disk(mount: &Path, total: u64, free: u64) -> () {
 }
 
 fn main() {
-    let s = System::new_all();
+    let mut s = System::new();
+    s.refresh_disks_list();
     let disks = s.get_disks();
     for d in disks {
         let mount = d.get_mount_point();
