@@ -68,4 +68,31 @@ mod tests {
 
         assert_eq!(expected, actual);
     }
+
+    #[test]
+    fn mb_format_correct() {
+        let x = 4_200_000;
+        let actual = format_size(x);
+        let expected = String::from("4.2 MB");
+
+        assert_eq!(expected, actual);
+    }
+
+    #[test]
+    fn kb_format_correct() {
+        let x = 4_200;
+        let actual = format_size(x);
+        let expected = String::from("4.2 KB");
+
+        assert_eq!(expected, actual);
+    }
+
+    #[test]
+    fn b_format_correct() {
+        let x = 42;
+        let actual = format_size(x);
+        let expected = String::from("42");
+
+        assert_eq!(expected, actual);
+    }
 }
