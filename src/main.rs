@@ -11,7 +11,7 @@ use sysinfo::*;
 /// // 4.2 GB
 /// let x = 4_200_000_000;
 /// let actual = format_size(x);
-/// let expected = String::new("4.2 GB");
+/// let expected = String::from("4.2 GB");
 /// 
 /// assert_eq!(expected, actual);
 /// ```
@@ -51,5 +51,21 @@ fn main() {
         let free = d.get_available_space();
 
         print_disk(mount, total, free);
+    }
+}
+
+#[cfg(test)]
+mod tests {
+
+    use super::{format_size};
+
+    #[test]
+    fn gb_format_correct() {
+        // 4.2 GB
+        let x = 4_200_000_000;
+        let actual = format_size(x);
+        let expected = String::from("4.2 GB");
+
+        assert_eq!(expected, actual);
     }
 }
