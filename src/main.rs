@@ -26,7 +26,7 @@ fn format_size(size: u64) -> String {
         // KB
         format!("{}.{} KB", size / 1000, size / 100 % 10)
     } else {
-        size.to_string()
+        format!("{} B",size.to_string())
     }
 }
 
@@ -91,8 +91,25 @@ mod tests {
     fn b_format_correct() {
         let x = 42;
         let actual = format_size(x);
-        let expected = String::from("42");
+        let expected = String::from("42 B");
 
         assert_eq!(expected, actual);
+    }
+
+    #[test]
+    fn zero_correct() {
+        let x = 0;
+        let actual = format_size(x);
+        let expected = String::from("0 B");
+
+        assert_eq!(expected, actual);
+    }
+
+    #[test]
+    fn max_correct() {
+        let x = u64::MAX;
+        let actual = format_size(x);
+        
+        assert!(actual.contains("GB"));
     }
 }
