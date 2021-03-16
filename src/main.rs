@@ -5,33 +5,33 @@ use std::path::Path;
 use sysinfo::*;
 
 /// format the size to bytes, KB, MB or GB
-/// 
+///
 /// # Examples
 /// ```
 /// // 4.2 GB
 /// let x = 4_200_000_000;
 /// let actual = format_size(x);
 /// let expected = String::from("4.2 GB");
-/// 
+///
 /// assert_eq!(expected, actual);
 /// ```
 fn format_size(size: u64) -> String {
-    if size > 1000_000_000 {
+    if size > 1_000_000_000 {
         // GB
-        format!("{}.{} GB", size / 1000_000_000, size / 100_000_000 % 10)
-    } else if size > 1000_000 {
+        format!("{}.{} GB", size / 1_000_000_000, size / 100_000_000 % 10)
+    } else if size > 1_000_000 {
         // MB
-        format!("{}.{} MB", size / 1000_000, size / 100_000 % 10)
+        format!("{}.{} MB", size / 1_000_000, size / 100_000 % 10)
     } else if size > 1000 {
         // KB
         format!("{}.{} KB", size / 1000, size / 100 % 10)
     } else {
-        format!("{} B",size.to_string())
+        format!("{} B", size.to_string())
     }
 }
 
 /// print the disk info to output
-fn print_disk(mount: &Path, total: u64, free: u64) -> () {
+fn print_disk(mount: &Path, total: u64, free: u64) {
     println!(
         "{} total:{} free: {}",
         mount.display(),
@@ -57,7 +57,7 @@ fn main() {
 #[cfg(test)]
 mod tests {
 
-    use super::{format_size};
+    use super::format_size;
 
     #[test]
     fn gb_format_correct() {
@@ -109,7 +109,7 @@ mod tests {
     fn max_correct() {
         let x = u64::MAX;
         let actual = format_size(x);
-        
+
         assert!(actual.contains("GB"));
     }
 }
