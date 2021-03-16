@@ -2,7 +2,7 @@
 //! A simple tool to see how much disk space is left on your system
 
 use std::path::Path;
-use sysinfo::*;
+use sysinfo::{DiskExt, System, SystemExt};
 
 /// format the size to bytes, KB, MB or GB
 ///
