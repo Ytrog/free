@@ -5,6 +5,16 @@ use std::path::Path;
 use sysinfo::*;
 
 /// format the size to bytes, KB, MB or GB
+/// 
+/// # Examples
+/// ```
+/// // 4.2 GB
+/// let x = 4_200_000_000;
+/// let actual = format_size(x);
+/// let expected = String::new("4.2 GB");
+/// 
+/// assert_eq!(expected, actual);
+/// ```
 fn format_size(size: u64) -> String {
     if size > 1000_000_000 {
         // GB
