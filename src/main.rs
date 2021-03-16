@@ -40,6 +40,7 @@ fn print_disk(mount: &Path, total: u64, free: u64) -> () {
     );
 }
 
+/// main function
 fn main() {
     let mut s = System::new();
     s.refresh_disks_list();
