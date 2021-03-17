@@ -1,6 +1,8 @@
 [package]
 name = "free"
-version = "0.2.1"
+license = "GPL-3.0-only"
+description = "Show free disk space on Windows"
+version = "0.2.2"
 authors = ["Ytrog <hisbrucker@gmail.com>"]
 edition = "2018"
 
