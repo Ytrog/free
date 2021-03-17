@@ -1,8 +1,10 @@
 [package]
-name = "free"
+name = "dfree"
 license = "GPL-3.0-only"
 description = "Show free disk space on Windows"
-version = "0.2.2"
+repository = "https://github.com/Ytrog/free"
+readme = "README.md"
+version = "0.2.3"
 authors = ["Ytrog <hisbrucker@gmail.com>"]
 edition = "2018"
 
