@@ -42,9 +42,11 @@ fn print_disk(mount: &Path, total: u64, free: u64) {
 
 /// main function
 fn main() {
+    const VERSION: &'static str = env!("CARGO_PKG_VERSION");
     let mut s = System::new();
     s.refresh_disks_list();
     let disks = s.get_disks();
+    println!("dfree v{}", VERSION);
     for d in disks {
         let mount = d.get_mount_point();
         let total = d.get_total_space();

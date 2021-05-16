@@ -4,7 +4,7 @@ license = "GPL-3.0-only"
 description = "Show free disk space on Windows"
 repository = "https://github.com/Ytrog/free"
 readme = "README.md"
-version = "0.2.3"
+version = "0.2.4"
 authors = ["Ytrog <hisbrucker@gmail.com>"]
 edition = "2018"
 
