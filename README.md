@@ -5,4 +5,4 @@ Show free disk space
 
 usage: `dfree`
 
-Install with `cargo install --git https://github.com/Ytrog/free.git --tag v0.2.3`
+Install with `cargo install dfree`
