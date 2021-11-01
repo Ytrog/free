@@ -4,9 +4,9 @@ license = "GPL-3.0-only"
 description = "Show free disk space on Windows"
 repository = "https://github.com/Ytrog/free"
 readme = "README.md"
-version = "0.2.5"
+version = "0.3.0"
 authors = ["Ytrog <hisbrucker@gmail.com>"]
-edition = "2018"
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
